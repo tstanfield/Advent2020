@@ -1,0 +1,62 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+
+namespace Day1.Test
+{
+    public class Tests
+    {
+        private List<string> Data = new List<string>();
+
+        [SetUp]
+        public void Setup()
+        {
+            Data.Add("1721");
+            Data.Add("979");
+            Data.Add("366");
+            Data.Add("299");
+            Data.Add("675");
+            Data.Add("1456");
+        }
+
+        [Test]
+        public void FindExpensesWithSum()
+        {
+            //arrange
+            var expected = 
+                new Day1.SumResult 
+                { 
+                    Expense1 = 1721, 
+                    Expense2 = 299 
+                };
+
+            //act
+            var day1 = new Day1();
+            var actual = day1.Solution(Data, 2020);
+
+            //assert
+            Assert.AreEqual(expected.Expense1, actual.Expense1);
+            Assert.AreEqual(expected.Expense2, actual.Expense2);
+        }
+
+        [Test]
+        public void MultiplyExpenses()
+        {
+            //arrange
+            var expected = 514579;
+            var sumResult =
+                new Day1.SumResult
+                {
+                    Expense1 = 1721,
+                    Expense2 = 299
+                };
+
+
+            //act
+            var day1 = new Day1();
+            var actual = day1.Multiply(sumResult);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}

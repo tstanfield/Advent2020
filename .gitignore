@@ -3,3 +3,6 @@
 ################################################################################
 
 /Day1/bin/Debug/netcoreapp3.1
+/Day1/obj/Debug/netcoreapp3.1
+/Day1.Test/bin/Debug/netcoreapp3.1
+/Day1.Test/obj
