@@ -10,6 +10,16 @@ namespace Day1
         {
             public int Expense1 { get; set; }
             public int Expense2 { get; set; }
+
+            public List<int> GetValues()
+            {
+                return
+                    new List<int>
+                    {
+                        Expense1,
+                        Expense2
+                    };
+            }
         }
 
         public SumResult Solution(List<string> data, int sum)

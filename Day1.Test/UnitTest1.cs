@@ -34,8 +34,9 @@ namespace Day1.Test
             var actual = day1.Solution(Data, 2020);
 
             //assert
-            Assert.AreEqual(expected.Expense1, actual.Expense1);
-            Assert.AreEqual(expected.Expense2, actual.Expense2);
+            Assert.Contains(expected.Expense1, actual.GetValues());            
+            Assert.Contains(expected.Expense2, actual.GetValues());
+            Assert.AreEqual(actual.Expense1 + expected.Expense2, 2020);
         }
 
         [Test]
