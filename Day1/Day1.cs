@@ -26,7 +26,7 @@ namespace Day1
         {
             for (int i = 0; i < data.Count; i++)
             {
-                for (int j = i; j < data.Count; j++)
+                for (int j = i + 1; j < data.Count; j++)
                 {
                     if (data[i] + data[j] == sum)
                     {
