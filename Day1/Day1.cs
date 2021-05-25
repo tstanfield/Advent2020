@@ -23,18 +23,34 @@ namespace Day1
         }
 
         public SumResult Solution(List<int> data, int sum)
-        {            
-            return 
+        {
+            for (int i = 0; i < data.Count; i++)
+            {
+                for (int j = i; j < data.Count; j++)
+                {
+                    if (data[i] + data[j] == sum)
+                    {
+                        return
+                            new SumResult
+                            {
+                                Expense1 = data[i],
+                                Expense2 = data[j]
+                            };
+                    }
+                }
+            }
+
+            return
                 new SumResult {};
-        }        
+        }
 
         public int Multiply(SumResult sumResult)
         {
-            if(sumResult == null)            
+            if(sumResult == null)
                 throw new ArgumentNullException(nameof(sumResult));
 
             return
-                0;
+                sumResult.Expense1 * sumResult.Expense2;
         }
     }
 }
