@@ -19,7 +19,7 @@ namespace Day1.Test
         }
 
         [Test]
-        public void FindExpensesWithSum()
+        public void FindExpensesWithSum_1()
         {
             //arrange
             var expected =
@@ -31,7 +31,7 @@ namespace Day1.Test
 
             //act
             var day1 = new Day1(2020);
-            day1.Solution(Data);
+            day1.SolutionForTwo(Data);
 
             var actual = day1.SolutionValues;
 
@@ -42,8 +42,9 @@ namespace Day1.Test
             Assert.AreEqual(actual[0] + actual[1], 2020);
         }
 
+
         [Test]
-        public void MultiplyExpenses()
+        public void MultiplyExpenses_1()
         {
             //arrange
             var expected = 514579;
@@ -52,6 +53,49 @@ namespace Day1.Test
             var day1 = new Day1(2020);
             day1.SolutionValues.Add(1721);
             day1.SolutionValues.Add(299);
+            var actual = day1.Multiply();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void FindExpensesWithSum_2()
+        {
+            //arrange
+            var expected =
+                new List<int>
+                {
+                    979,
+                    366,
+                    675
+                };
+
+            //act
+            var day1 = new Day1(2020);
+            day1.SolutionForThree(Data);
+
+            var actual = day1.SolutionValues;
+
+            //assert
+            Assert.Contains(expected[0], actual);
+            Assert.Contains(expected[1], actual);
+            Assert.Contains(expected[2], actual);
+            Assert.AreEqual(3, actual.Count);
+            Assert.AreEqual(actual[0] + actual[1] + actual[2], 2020);
+        }
+
+        [Test]
+        public void MultiplyExpenses_2()
+        {
+            //arrange
+            var expected = 241861950;
+
+            //act
+            var day1 = new Day1(2020);
+            day1.SolutionValues.Add(979);
+            day1.SolutionValues.Add(366);
+            day1.SolutionValues.Add(675);
             var actual = day1.Multiply();
 
             //assert

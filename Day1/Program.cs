@@ -18,10 +18,15 @@ namespace Day1
 
             Day1 day1 = new Day1(2020);
 
-            day1.Solution(data);
+            day1.SolutionForTwo(data);
             var answer = day1.Multiply();
 
-            Console.WriteLine(answer);            
+            Console.WriteLine("Answer part 1 =" + answer);
+
+            day1.SolutionForThree(data);
+            answer = day1.Multiply();
+
+            Console.WriteLine("Answer part 2 =" + answer);
         }
     }
 }
