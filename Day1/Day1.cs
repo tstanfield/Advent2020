@@ -22,8 +22,8 @@ namespace Day1
             }
         }
 
-        public SumResult Solution(List<string> data, int sum)
-        {
+        public SumResult Solution(List<int> data, int sum)
+        {            
             return 
                 new SumResult {};
         }        

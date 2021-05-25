@@ -5,17 +5,17 @@ namespace Day1.Test
 {
     public class Tests
     {
-        private List<string> Data = new List<string>();
+        private List<int> Data = new List<int>();
 
         [SetUp]
         public void Setup()
         {
-            Data.Add("1721");
-            Data.Add("979");
-            Data.Add("366");
-            Data.Add("299");
-            Data.Add("675");
-            Data.Add("1456");
+            Data.Add(1721);
+            Data.Add(979);
+            Data.Add(366);
+            Data.Add(299);
+            Data.Add(675);
+            Data.Add(1456);
         }
 
         [Test]
