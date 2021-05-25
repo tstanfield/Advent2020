@@ -16,13 +16,12 @@ namespace Day1
                 data.Add(value);
             }
 
-            Day1 day1 = new Day1();
+            Day1 day1 = new Day1(2020);
 
-            var solution = day1.Solution(data, 2020);
-            var answer = day1.Multiply(solution);
+            day1.Solution(data);
+            var answer = day1.Multiply();
 
-            Console.WriteLine(answer);
-            
+            Console.WriteLine(answer);            
         }
     }
 }

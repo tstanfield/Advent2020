@@ -6,51 +6,43 @@ namespace Day1
 {
     public class Day1
     {
-        public class SumResult
+        public int Sum { get; private set; }
+        public Day1(int sum)
         {
-            public int Expense1 { get; set; }
-            public int Expense2 { get; set; }
-
-            public List<int> GetValues()
-            {
-                return
-                    new List<int>
-                    {
-                        Expense1,
-                        Expense2
-                    };
-            }
+            Sum = sum;
         }
 
-        public SumResult Solution(List<int> data, int sum)
+        public List<int> SolutionValues { get; } = new List<int> { };
+
+        public void Solution(List<int> data)
         {
+            SolutionValues.Clear();
+
             for (int i = 0; i < data.Count; i++)
             {
                 for (int j = i + 1; j < data.Count; j++)
                 {
-                    if (data[i] + data[j] == sum)
+                    if (data[i] + data[j] == Sum)
                     {
-                        return
-                            new SumResult
-                            {
-                                Expense1 = data[i],
-                                Expense2 = data[j]
-                            };
+                        SolutionValues.Add(data[i]);
+                        SolutionValues.Add(data[j]);
+
+                        return;
                     }
                 }
-            }
-
-            return
-                new SumResult {};
+            }            
         }
 
-        public int Multiply(SumResult sumResult)
+        public long Multiply()
         {
-            if(sumResult == null)
-                throw new ArgumentNullException(nameof(sumResult));
+            long result = 1;
 
-            return
-                sumResult.Expense1 * sumResult.Expense2;
+            foreach(int i in SolutionValues)
+            {
+                result *= i;
+            }
+
+            return result;
         }
     }
 }

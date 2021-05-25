@@ -22,21 +22,24 @@ namespace Day1.Test
         public void FindExpensesWithSum()
         {
             //arrange
-            var expected = 
-                new Day1.SumResult 
+            var expected =
+                new List<int>
                 { 
-                    Expense1 = 1721, 
-                    Expense2 = 299 
+                    1721,
+                    299
                 };
 
             //act
-            var day1 = new Day1();
-            var actual = day1.Solution(Data, 2020);
+            var day1 = new Day1(2020);
+            day1.Solution(Data);
+
+            var actual = day1.SolutionValues;
 
             //assert
-            Assert.Contains(expected.Expense1, actual.GetValues());            
-            Assert.Contains(expected.Expense2, actual.GetValues());
-            Assert.AreEqual(actual.Expense1 + expected.Expense2, 2020);
+            Assert.Contains(expected[0], actual);            
+            Assert.Contains(expected[1], actual);
+            Assert.AreEqual(2, actual.Count);
+            Assert.AreEqual(actual[0] + actual[1], 2020);
         }
 
         [Test]
@@ -44,17 +47,12 @@ namespace Day1.Test
         {
             //arrange
             var expected = 514579;
-            var sumResult =
-                new Day1.SumResult
-                {
-                    Expense1 = 1721,
-                    Expense2 = 299
-                };
-
-
+            
             //act
-            var day1 = new Day1();
-            var actual = day1.Multiply(sumResult);
+            var day1 = new Day1(2020);
+            day1.SolutionValues.Add(1721);
+            day1.SolutionValues.Add(299);
+            var actual = day1.Multiply();
 
             //assert
             Assert.AreEqual(expected, actual);
