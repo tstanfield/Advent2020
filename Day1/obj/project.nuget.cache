@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "XsJOxSiJR3/NZMW7WNJAuK+yo0kW4aeBJlbjayCY28+8dTllS/z9gq24cT5iDtc17WxBB/c2/aYs9srfhH6B3w==",
+  "success": true,
+  "projectFilePath": "C:\\Source\\Repos\\Advent2020\\Day1\\Day1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Terry.Stanfield\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
+  "logs": []
+}
